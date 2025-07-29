@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gymeal - Spartan Gym Food</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Language Switcher -->
+  <div class="flex justify-end p-4 space-x-4 text-sm">
+    <button onclick="setLang('en')">🇬🇧 English</button>
+    <button onclick="setLang('fr')">🇫🇷 Français</button>
+    <button onclick="setLang('ar')">🇩🇿 العربية</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="text-center p-10">
+    <h1 class="text-4xl font-bold mb-4" data-i18n="title">Fuel Like a Warrior</h1>
+    <p class="text-lg max-w-xl mx-auto" data-i18n="subtitle">High-protein gym meals inspired by Spartan strength. Built for athletes, delivered in Algiers.</p>
+  </section>
+
+  <!-- Meals Section -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-20 py-10">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal1">Chicken Breast + Rice</h2>
+      <p class="mb-4" data-i18n="meal1desc">Lean protein and clean carbs for peak performance.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal2">Beef + Sweet Potatoes</h2>
+      <p class="mb-4" data-i18n="meal2desc">Muscle-building fuel with long-lasting energy.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal3">Protein Pancakes</h2>
+      <p class="mb-4" data-i18n="meal3desc">Perfect for breakfast gains and recovery.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal4">Oat Bowl with Fruit</h2>
+      <p class="mb-4" data-i18n="meal4desc">Clean energy and fiber-packed power breakfast.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="text-center px-6 md:px-20 py-10">
+    <h2 class="text-2xl font-bold mb-4" data-i18n="aboutTitle">About Gymeal</h2>
+    <p class="max-w-2xl mx-auto" data-i18n="aboutText">
+      Born in Algiers, Gymeal brings Spartan-inspired gym meals to modern athletes. We fuel your hustle with clean, powerful nutrition — made by athletes, for athletes.
+    </p>
+    <p class="mt-4" data-i18n="deliveryNote">📍 We currently deliver in Algiers only.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 border-t border-gray-700">
+    <p>📲 <a href="https://wa.me/213562566905" class="text-green-400">WhatsApp</a> | 📸 <a href="https://instagram.com/gymeal_dz" class="text-pink-400">@gymeal_dz</a></p>
+    <p class="text-sm text-gray-400 mt-2">&copy; 2025 Gymeal. All rights reserved.</p>
+  </footer>
+
+  <!-- Language Data Script -->
+  <script>
+    const translations = {
+      en: {
+        title: "Fuel Like a Warrior",
+        subtitle: "High-protein gym meals inspired by Spartan strength. Built for athletes, delivered in Algiers.",
+        meal1: "Chicken Breast + Rice",
+        meal1desc: "Lean protein and clean carbs for peak performance.",
+        meal2: "Beef + Sweet Potatoes",
+        meal2desc: "Muscle-building fuel with long-lasting energy.",
+        meal3: "Protein Pancakes",
+        meal3desc: "Perfect for breakfast gains and recovery.",
+        meal4: "Oat Bowl with Fruit",
+        meal4desc: "Clean energy and fiber-packed power breakfast.",
+        order: "Order on WhatsApp",
+        aboutTitle: "About Gymeal",
+        aboutText: "Born in Algiers, Gymeal brings Spartan-inspired gym meals to modern athletes. We fuel your hustle with clean, powerful nutrition — made by athletes, for athletes.",
+        deliveryNote: "📍 We currently deliver in Algiers only."
+      },
+      fr: {
+        title: "Alimente-toi comme un guerrier",
+        subtitle: "Des repas protéinés inspirés de la force spartiate. Préparés pour les athlètes, livrés à Alger.",
+        meal1: "Blanc de poulet + Riz",
+        meal1desc: "Protéines maigres et glucides propres pour des performances optimales.",
+        meal2: "Boeuf + Patates douces",
+        meal2desc: "Carburant pour les muscles avec énergie durable.",
+        meal3: "Pancakes protéinés",
+        meal3desc: "Idéal pour un petit déjeuner musclé et la récupération.",
+        meal4: "Bol d'avoine aux fruits",
+        meal4desc: "Énergie propre et petit-déjeuner riche en fibres.",
+        order: "Commander sur WhatsApp",
+        aboutTitle: "À propos de Gymeal",
+        aboutText: "Né à Alger, Gymeal apporte des repas inspirés des Spartiates aux athlètes modernes. Une nutrition puissante, préparée par des sportifs pour des sportifs.",
+        deliveryNote: "📍 Livraison disponible uniquement à Alger."
+      },
+      ar: {
+        title: "تزود كالمحارب",
+        subtitle: "وجبات رياضية غنية بالبروتين مستوحاة من قوة الأساطير. مخصصة للرياضيين وتوصيل في الجزائر فقط.",
+        meal1: "صدر دجاج + أرز",
+        meal1desc: "بروتين خفيف وكربوهيدرات نظيفة لأداء عالي.",
+        meal2: "لحم بقر + بطاطا حلوة",
+        meal2desc: "طاقة لبناء العضلات تدوم طويلًا.",
+        meal3: "بان كيك بروتين",
+        meal3desc: "فطور مثالي للتضخيم والتعافي.",
+        meal4: "شوفان مع فواكه",
+        meal4desc: "طاقة نظيفة وفطور غني بالألياف.",
+        order: "اطلب عبر واتساب",
+        aboutTitle: "عن Gymeal",
+        aboutText: "وُلدت Gymeal في الجزائر لتقدم وجبات مستوحاة من المحاربين للرياضيين المعاصرين. تغذية نظيفة وقوية من رياضيين حقيقيين مثلك.",
+        deliveryNote: "📍 التوصيل متاح في الجزائر فقط."
+      }
+    };
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    // Default to English
+    setLang('en');
+  </script>
+</body>
+</html>
