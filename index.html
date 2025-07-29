@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gymeal - High-protein gym meals inspired by Spartan strength. Built for athletes, delivered in Algiers." />
+  <meta name="keywords" content="gym meals, high-protein meals, Spartan food, Algiers delivery" />
+  <meta name="author" content="Gymeal" />
+  <title>Gymeal - Spartan Gym Food</title>
+  <script src="https://cdn.tailwindcss.com" async></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    #loading {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Language Switcher -->
+  <div class="flex justify-end p-4 space-x-4 text-sm">
+    <button onclick="setLang('en')" aria-label="Switch to English">🇬🇧 English</button>
+    <button onclick="setLang('fr')" aria-label="Switch to French">🇫🇷 Français</button>
+    <button onclick="setLang('ar')" aria-label="Switch to Arabic">🇩🇿 العربية</button>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div id="loading" class="text-center p-4">Loading...</div>
+
+  <!-- Hero Section -->
+  <section class="text-center p-10">
+    <h1 class="text-4xl font-bold mb-4" data-i18n="title">Fuel Like a Warrior</h1>
+    <p class="text-lg max-w-xl mx-auto" data-i18n="subtitle">High-protein gym meals inspired by Spartan strength. Built for athletes, delivered in Algiers.</p>
+  </section>
+
+  <!-- Meals Section -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 sm:px-10 py-10">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal1">Chicken Breast + Rice</h2>
+      <p class="mb-4" data-i18n="meal1desc">Lean protein and clean carbs for peak performance.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal2">Beef + Sweet Potatoes</h2>
+      <p class="mb-4" data-i18n="meal2desc">Muscle-building fuel with long-lasting energy.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal3">Protein Pancakes</h2>
+      <p class="mb-4" data-i18n="meal3desc">Perfect for breakfast gains and recovery.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+      <h2 class="text-xl font-semibold mb-2" data-i18n="meal4">Oat Bowl with Fruit</h2>
+      <p class="mb-4" data-i18n="meal4desc">Clean energy and fiber-packed power breakfast.</p>
+      <a href="https://wa.me/213562566905" class="bg-green-500 text-white px-4 py-2 rounded" target="_blank" data-i18n="order">Order on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="text-center px-6 sm:px-10 py-10">
+    <h2 class="text-2xl font-bold mb-4" data-i18n="aboutTitle">About Gymeal</h2>
+    <p class="max-w-2xl mx-auto" data-i18n="aboutText">
+      Born in Algiers, Gymeal brings Spartan-inspired gym meals to modern athletes. We fuel your hustle with clean, powerful nutrition — made by athletes, for athletes.
+    </p>
+    <p class="mt-4" data-i18n="deliveryNote">📍 We currently deliver in Algiers only.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 border-t border-gray-700">
+    <p>📲 <a href="https://wa.me/213562566905" class="text-green-400">WhatsApp</a> | 📸 <a href="https://instagram.com/gymeal_dz" class="text-pink-400">@gymeal_dz</a></p>
+    <p class="text-sm text-gray-400 mt-2">&copy; 2025 Gymeal. All rights reserved.</p>
+  </footer>
+
+  <!-- Language Data Script -->
+  <script>
+    const translations = {
+      en: { /* ...existing translations... */ },
+      fr: { /* ...existing translations... */ },
+      ar: { /* ...existing translations... */ }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('preferredLang', lang); // Save language preference
+      document.getElementById('loading').style.display = 'block'; // Show loading
+      setTimeout(() => {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          el.textContent = translations[lang]?.[key] || `Missing translation: ${key}`;
+        });
+        document.getElementById('loading').style.display = 'none'; // Hide loading
+      }, 200); // Simulate delay
+    }
+
+    // Load preferred language on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const preferredLang = localStorage.getItem('preferredLang') || 'en';
+      setLang(preferredLang);
+    });
+  </script>
+</body>
+</html>
